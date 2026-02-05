@@ -1,0 +1,480 @@
+/* ===========================
+   1. CSS Variables
+   =========================== */
+:root {
+  /* Colors - From book cover palette */
+  --color-primary: #0B0C1F;
+  --color-accent: #00A8CC;
+  --color-text: #2C2C2C;
+  --color-text-light: #4A4A4A;
+  --color-bg: #FFFFFF;
+  --color-bg-light: #F9F9F9;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  
+  /* Typography */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Merriweather', serif;
+  
+  /* Spacing (8px grid) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  
+  /* Layout */
+  --max-width: 1200px;
+  --content-width: 720px;
+}
+
+/* ===========================
+   2. Reset & Base Styles
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   3. Typography
+   =========================== */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* ===========================
+   4. Utility Classes
+   =========================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  padding: var(--space-xs);
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===========================
+   5. Button Component
+   =========================== */
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.button--primary {
+  background-color: transparent;
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+}
+
+.button--primary:hover,
+.button--primary:focus {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   6. Hero Section
+   =========================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/FINAL Book cover 5 - CUANDO EL CUERPO DEJA DE LUCHAR.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-bg);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  font-family: var(--font-heading);
+  color: var(--color-bg);
+  margin-bottom: var(--space-xl);
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero .button--primary {
+  border-color: var(--color-bg);
+  color: var(--color-bg);
+}
+
+.hero .button--primary:hover,
+.hero .button--primary:focus {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+/* ===========================
+   7. Book Section
+   =========================== */
+.book-section {
+  padding: 80px 20px;
+  background-color: var(--color-bg-light);
+}
+
+.book-section__container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.book-section__content {
+  text-align: center;
+}
+
+.book-section__title {
+  font-size: 36px;
+  margin-bottom: var(--space-sm);
+}
+
+.book-section__subtitle {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.book-section__description {
+  max-width: var(--content-width);
+  margin: 0 auto var(--space-xl);
+  text-align: left;
+}
+
+.book-section__description p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===========================
+   8. Audience Section
+   =========================== */
+.audience-section {
+  padding: 80px 20px;
+  background-color: var(--color-bg);
+}
+
+.audience-section__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.audience-section__title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.audience-section__list {
+  list-style: none;
+  padding: 0;
+}
+
+.audience-section__item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: var(--space-md);
+  font-size: 18px;
+  line-height: 2.0;
+}
+
+.audience-section__item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 32px;
+  line-height: 1;
+}
+
+/* ===========================
+   9. Author Section
+   =========================== */
+.author-section {
+  padding: 80px 20px;
+  background-color: var(--color-bg-light);
+}
+
+.author-section__container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.author-section__title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.author-section__content {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.author-section__content p {
+  margin-bottom: var(--space-md);
+}
+
+/* ===========================
+   10. Newsletter Section
+   =========================== */
+.newsletter {
+  padding: 80px 20px;
+  background-color: var(--color-bg);
+}
+
+.newsletter__container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter__heading {
+  margin-bottom: var(--space-md);
+}
+
+.newsletter__description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-light);
+}
+
+.newsletter__form {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.newsletter__input {
+  padding: 16px;
+  font-size: 16px;
+  font-family: var(--font-body);
+  border: 2px solid var(--color-text-light);
+  border-radius: 4px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.newsletter__submit {
+  width: 100%;
+}
+
+/* ===========================
+   11. Closing Section
+   =========================== */
+.closing-section {
+  padding: 100px 20px;
+  background-color: var(--color-bg-light);
+}
+
+.closing-section__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.closing-section__quote {
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ===========================
+   12. Footer Section
+   =========================== */
+.footer {
+  padding: 40px 20px;
+  background-color: var(--color-primary);
+  text-align: center;
+}
+
+.footer__container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.footer__contact {
+  font-size: 16px;
+  color: var(--color-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__link {
+  color: var(--color-bg);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ===========================
+   13. Media Queries
+   =========================== */
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  .hero__title {
+    font-size: 48px;
+  }
+  
+  .hero__subtitle {
+    font-size: 20px;
+  }
+  
+  .newsletter__form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .newsletter__input {
+    flex: 1;
+  }
+  
+  .newsletter__submit {
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .closing-section__quote {
+    font-size: 28px;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .book-section {
+    padding: 100px 40px;
+  }
+  
+  .audience-section {
+    padding: 100px 40px;
+  }
+  
+  .author-section {
+    padding: 100px 40px;
+  }
+  
+  .newsletter {
+    padding: 100px 40px;
+  }
+  
+  .closing-section {
+    padding: 120px 40px;
+  }
+}
