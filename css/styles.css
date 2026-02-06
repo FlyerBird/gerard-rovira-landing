@@ -345,7 +345,7 @@ p {
   margin-top: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 8px;
 }
 
 .newsletter__input {
@@ -365,6 +365,48 @@ p {
 
 .newsletter__submit {
   width: 100%;
+}
+
+/* Mailchimp Overrides */
+#mc_embed_signup {
+  background: transparent !important;
+  clear: none;
+  font: inherit;
+  width: 100%;
+}
+
+#mc_embed_signup form {
+  padding: 0;
+  text-align: inherit;
+}
+
+#mc_embed_signup_scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#mc_embed_signup .response {
+  margin: var(--space-sm) 0 0;
+  padding: var(--space-md);
+  font-size: 15px;
+  font-family: var(--font-heading);
+  border-radius: 4px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#mc_embed_signup #mce-success-response {
+  color: #1b5e20;
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+}
+
+#mc_embed_signup #mce-error-response {
+  color: #b71c1c;
+  background-color: #ffebee;
+  border: 2px solid #f44336;
 }
 
 /* ===========================
@@ -452,13 +494,19 @@ p {
     font-size: 20px;
   }
 
-  .newsletter__form {
+
+
+  #mc_embed_signup_scroll {
     flex-direction: row;
     align-items: stretch;
   }
 
   .newsletter__input {
     flex: 1;
+    min-width: 0;
+    /* Prevent flex item from overflowing or resizing unpredictably */
+    width: 100%;
+    /* Ensure full width in its flex context */
   }
 
   .newsletter__submit {

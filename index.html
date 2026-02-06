@@ -52,7 +52,7 @@
     <div class="hero__content">
       <h1 class="hero__title">CUANDO EL CUERPO DEJA DE LUCHAR</h1>
       <p class="hero__subtitle">Sistema Nervioso, seguridad y el camino de vuelta a ti</p>
-      <p class="hero__description">Una mirada diferente sobre el estrés, el sistema nervioso y la seguridad.</p>
+      <p class="hero__description">Una mirada diferente sobre el estrés, el sistema nervioso y la seguridad</p>
       <a href="#libro" class="button button--primary">Ver el libro en Amazon</a>
     </div>
   </section>
@@ -120,11 +120,45 @@
         <p class="newsletter__description">Sin ruido. Sin promesas. Cuando tenga sentido.</p>
 
         <!-- Mailchimp Form -->
-        <form class="newsletter__form" action="#" method="post">
-          <input type="email" name="email" class="newsletter__input" placeholder="Tu email" required
-            aria-label="Tu email">
-          <button type="submit" class="newsletter__submit button button--primary">Suscribirme</button>
-        </form>
+        <div id="mc_embed_signup">
+          <form
+            action="https://gerardrovira.us2.list-manage.com/subscribe/post?u=91f732441c11de36e00115eec&amp;id=edcd4f281f&amp;f_id=001ef6e3f0"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+            class="newsletter__form validate" target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <!-- Email Field -->
+              <input type="email" name="EMAIL" class="newsletter__input required email" id="mce-EMAIL" required
+                placeholder="Tu email" aria-label="Tu email">
+
+              <!-- Bot Protection -->
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_91f732441c11de36e00115eec_edcd4f281f" tabindex="-1" value="">
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                class="newsletter__submit button button--primary">Suscribirme</button>
+            </div>
+
+            <!-- Response Messages -->
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Mailchimp Validation Script -->
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">
+          (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+          }(jQuery));
+          var $mcj = jQuery.noConflict(true);
+        </script>
       </div>
     </section>
 
